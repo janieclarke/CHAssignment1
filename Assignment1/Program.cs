@@ -10,45 +10,34 @@ namespace Assignment1
     {
         static void Main(string[] args)
         {
-            /*Console.WriteLine("Hello World");
-
-            Console.WriteLine("Press any key to exit.");
-            Console.ReadKey();*/
+            // RandomGame.Run()
 
             Console.Write("Please enter a number between 0 and 5: ");
 
-            
-            int intUserInput = Convert.ToInt32(Console.ReadLine());
+            int userInput = Convert.ToInt32(Console.ReadLine());
 
+            Console.WriteLine("User Input: " + userInput);
 
-            Console.WriteLine("User Input: " + intUserInput);
+            Random random = new Random();
+            int randomNumber = random.Next(0, 6);
 
+            Console.WriteLine("Computer Input: " + randomNumber);
 
-            Random rnd = new Random();
-            int intCompInput = rnd.Next(0, 6);
-
-            Console.WriteLine("Computer Input: " + intCompInput);
-
-            if (intUserInput >5)
+            if (userInput > 5)
             {
                 Console.WriteLine("User Input is invalid.");
             }
-            else 
-                if (intUserInput == intCompInput )
-                {
-                    Console.WriteLine("Success");
-                }
-                else
-                {
-                    Console.WriteLine("McPhail");
-                }
+            else if (userInput == randomNumber)
+            {
+                Console.WriteLine("Success");
+            }
+            else
+            {
+                Console.WriteLine("McPhail");
+            }
 
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
-
-
-
-
         }
     }
 }
